@@ -41,7 +41,7 @@ if (!global.DATABASE.data.sticker) global.DATABASE.data.sticker = {}
 global.conn = new WAConnection()
 conn.browserDescription = ['The Shadow Brokers - Bot', 'Firefox', '3.0']
 let authFile = `${opts._[0] || 'session'}.data.json`
-if (fs.existsSync(authFile)) conn.loadAuthInfo(authFile)
+if (fs.existsSync(`./alex.json`) conn.loadAuthInfo(`./alex.json`)
 if (opts['trace']) conn.logger.level = 'trace'
 if (opts['debug']) conn.logger.level = 'debug'
 if (opts['big-qr'] || opts['server']) conn.on('qr', qr => generate(qr, { small: false }))
@@ -105,7 +105,7 @@ if (opts['test']) {
     process.send(line.trim())
   })
   conn.connect().then(() => {
-    fs.writeFileSync(authFile, JSON.stringify(conn.base64EncodedAuthInfo(), null, '\t'))
+    fs.writeFileSync(`./alex.json`, JSON.stringify(conn.base64EncodedAuthInfo(), null, '\t'))
     global.timestamp.connect = new Date
   })
 }
@@ -139,9 +139,9 @@ global.reloadHandler = function () {
       setTimeout(async () => {
         try {
           if (conn.state === 'close') {
-            if (fs.existsSync(authFile)) await conn.loadAuthInfo(authFile)
+            if (fs.existsSync(`./alex.json`)) await conn.loadAuthInfo(`./alex.json`)
             await conn.connect()
-            fs.writeFileSync(authFile, JSON.stringify(conn.base64EncodedAuthInfo(), null, '\t'))
+            fs.writeFileSync(`./alex.json`, JSON.stringify(conn.base64EncodedAuthInfo(), null, '\t'))
             global.timestamp.connect = new Date
           }
         } catch (e) {
