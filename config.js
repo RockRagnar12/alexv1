@@ -49,7 +49,7 @@ global.APIKeys = { // APIKey Here
 
 // Sticker WM
 global.packname = '(☞ﾟ∀ﾟ)☞'
-global.author = 'The Shadow Brokers - Bot'
+global.author = 'Alexander Capiso - Bot'
 
 
 //global.wait = '*Esperé un momento..*'
