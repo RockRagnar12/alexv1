@@ -112,7 +112,7 @@ if (opts['test']) {
 process.on('uncaughtException', console.error)
 // let strQuot = /(["'])(?:(?=(\\?))\2.)*?\1/
 
-let isInit = false
+let isInit = true
 global.reloadHandler = function () {
   let handler = require('./handler')
   if (!isInit) {
