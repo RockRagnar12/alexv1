@@ -1,7 +1,7 @@
 let handler = async m => m.reply(`
 *◄┢┅͜͡✇⟬↯ື ►ஜ۩💥۩ஜ◄ ↯ື⟭✇͜͡┅┧►*
 
-💥 INFORMACION 💥.
+💥 INFORMACION 💥
 ➤ Para instalar el bot, se necesitara dos whatsapps de distintos telefonos.
 ➤ Para habilitar el /añadir y el /sacar usa #enable autoread
 - Puede ocasionar que el numero se vaya a soporte 
